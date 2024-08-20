@@ -1,4 +1,4 @@
-from clases.ClassChess import Chess
+from game.ClassChess import Chess
 
 def main():
     chess = Chess()

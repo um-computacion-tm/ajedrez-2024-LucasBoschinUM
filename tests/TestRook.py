@@ -1,6 +1,5 @@
-# test_rook.py
 import unittest
-from clases.ClassRook import Rook, Piece
+from game.ClassRook import Rook, Piece
 
 class TestRook(unittest.TestCase):
     
