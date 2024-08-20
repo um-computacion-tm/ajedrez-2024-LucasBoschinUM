@@ -1,8 +1,8 @@
-from game.ClassChess import Chess
+from game.class_chess import Chess
 
 def main():
     chess = Chess()
-    while True:
+    while chess.is_playing():
         play(chess)
 
 def play(chess):

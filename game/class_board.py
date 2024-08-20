@@ -1,4 +1,4 @@
-from ClassPieces import Rook
+from game.class_pieces import Rook
 
 class Board:
     def __init__(self):

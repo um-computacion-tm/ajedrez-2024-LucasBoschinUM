@@ -1,4 +1,4 @@
-from ClassBoard import Board
+from game.class_board import Board
 
 
 class Chess:

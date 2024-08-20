@@ -1,5 +1,5 @@
 import unittest
-from game.ClassPieces import Piece
+from game.class_pieces import Piece
 
 class TestPiece(unittest.TestCase):
     def test_initialization(self):
