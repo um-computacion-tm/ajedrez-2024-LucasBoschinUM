@@ -5,6 +5,7 @@ from game.class_board import Board
 class TestChess(unittest.TestCase):
     def setUp(self):
         self.chess = Chess()
+        self.chess._Chess__board__ = Board()  # Inicializar el tablero correctamente
 
     def test_initial_turn(self):
         self.assertEqual(self.chess.turn, "WHITE")

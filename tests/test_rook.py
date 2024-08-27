@@ -4,8 +4,8 @@ from game.class_rook import Rook, Piece
 class TestRook(unittest.TestCase):
     
     def setUp(self):
-        # Configuración inicial para las pruebas, si es necesario
-        self.rook = Rook()
+        # Configuración inicial para las pruebas
+        self.rook = Rook(__color__='white')  # Proporcionar el argumento '__color__'
 
     def test_rook_inheritance(self):
         # Verifica que Rook hereda de Piece
@@ -13,7 +13,7 @@ class TestRook(unittest.TestCase):
 
     def test_rook_initial_position(self):
         # Verifica la posición inicial del Rook, si hay un método o atributo para esto
-        # Ejemplo: self.assertEqual(self.rook.position, (0, 0))
+        # Ejemplo: self.assertEqual(self.rook.__position__, (0, 0))
         pass
 
     def test_rook_moves(self):
