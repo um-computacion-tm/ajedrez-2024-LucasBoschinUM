@@ -29,3 +29,8 @@ def play(chess):
 
 if __name__ == '__main__':
     main()
+
+# Para correrlo en mi terminal local:
+# export PYTHONPATH=$(pwd)
+# python3 game/cli.py
+# coverage run -m unittest && coverage xml && coverage report -m
