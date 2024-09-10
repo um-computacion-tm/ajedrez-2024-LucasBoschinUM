@@ -5,20 +5,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [4.1.0] - 04-09-24
-...
+## [4.1.0] - 10-09-24
+#--------------Segundo Sprint----------------
+- The following changes were made on game/class_rook.py: Removed an unusable line of code
+- README.md was improved to be more aesthetically pleasing
 
-## [4.1.0] - 03-09-24
-...
+## [6.5.1] - 09-09-24
+- The following changes were made on game/class_pieces.py: Added attribute definitions ; Added additional functionality to attributes to be visually represented in a graphical interface or by console
+- The following changes were made on game/class_pieces.py: Added an additional method, Added controlled access to __color__ ; Improved encapsulation ; Reused access to the code with the get_color method to access different parts without going through the private attribute
 
-## [4.1.0] - 02-09-24
-...
+## [6.4.1] - 08-09-24
+- The following changes were made on game/cli.py: Added more module imports ; Capture exceptions more specifically ; Fixed a line of Indentation
 
-## [4.1.0] - 01-09-24
-...
+## [6.3.1] - 07-09-24
+- The following changes were made on game/exceptions.py: Added specific error messages to each exception ; Implemented __str__ method to return the error message ; Added attributes to the base class
 
-## [4.1.0] - 31-08-24
-...
+## [6.3.0] - 06-09-24
+- The following changes were made on game/class_board.py: Added additional imports ; Added a condition to initialise the board ; Removed __str__ method ; Added validation on get_piece ; Added a new method
+
+## [6.2.0] - 05-09-24
+- The following changes were made on tests/test_board.py: Added additionals imports ; Added tests methods
+
+## [6.1.0] - 04-09-24
+- The following changes were made on tests/test_rook.py: Added one more testing method
+
+## [6.0.0] - 03-09-24
+-  The following changes were made on game/class_chess.py: Added personal comments to test how the game and tests runs at local host
+-  The following changes were made on game/class_chess.py: Changed class Rook(piece) to class Pawn(piece)
+-  The following changes were made on game/class_chess.py: Added an import ; Added a validation to check if the move is valid, if not valid, an exception is thrown
+
+## [5.2.0] - 02-09-24
+- Added name on README.md
+-  The following changes were made on game/class_board.py: Added an additional parameter in the constructor ; Added self to the Rook instance ; Added set_piece method
+
+## [5.1.0] - 01-09-24
+- The following changes were made on game/class_pieces.py: Added a board parameter to the constructor ; Added attribute self.__board__ ; Added a __str__ method ; Removed class_rook
+
+## [5.0.0] - 31-08-24
+- The following changes were made on game/class_rook.py: Added class attributes ; Removed __str__ method ; Added valid_positions method ; Added possible_positions_vd method ; Added movement logic
+- Added changes on changelog.md & coverage.xml
 
 ## [4.2.0] - 30-08-24
 - The following changes were made on tests/test_pieces.py: Added module imports ; Created Board instance ; Added parameters in Piece constructor ; Added additional dependencies
