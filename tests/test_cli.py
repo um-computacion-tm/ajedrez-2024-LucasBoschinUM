@@ -3,6 +3,7 @@ from unittest.mock import patch
 from game.class_chess import Chess
 from game.cli import play
 
+
 class TestCli(unittest.TestCase):
     @patch(  # este patch controla lo que hace el input
         'builtins.input',

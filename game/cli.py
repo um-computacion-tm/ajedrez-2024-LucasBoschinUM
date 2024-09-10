@@ -1,5 +1,5 @@
 from game.class_chess import Chess
-
+from game.exceptions import InvalidMove, InvalidTurn, EmptyPosition
 
 def main():
     chess = Chess()
@@ -22,6 +22,8 @@ def play(chess):
             to_row,
             to_col,
         )
+    except InvalidMove as e:
+        print(e)
     except Exception as e:
         print("error", e)
 
@@ -29,3 +31,8 @@ def play(chess):
 
 if __name__ == '__main__':
     main()
+
+# Para correrlo en mi terminal local:
+# export PYTHONPATH=$(pwd)
+# python3 game/cli.py
+# coverage run -m unittest && coverage xml && coverage report -m

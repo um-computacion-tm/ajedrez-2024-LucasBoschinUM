@@ -1,10 +1,13 @@
 class Piece:
-    def __init__(self, color):
+    def __init__(self, color, board):
         self.__color__ = color
+        self.__board__ = board
 
-class Rook(Piece):
-    def __init__(self, color):
-        super().__init__(color)
+    def __str__(self):
+        if self.__color__ == "WHITE":
+            return self.white_str
+        else:
+            return self.black_str
 
-    def move(self):
-        print("Rook moves horizontally or vertically")
+    def get_color(self):
+        return self.__color__

@@ -1,5 +1,5 @@
 from game.class_board import Board
-
+from game.exceptions import InvalidMove
 
 class Chess:
     def __init__(self):
@@ -18,6 +18,8 @@ class Chess:
     ):
         # validate coords
         piece = self.__board__.get_piece(from_row, from_col)
+        if piece.valid_positions(from_row, from_col, to_row, to_col):
+            raise InvalidMove()
         self.change_turn()
     @property
     def turn(self):

@@ -1,25 +1,66 @@
 import unittest
-from game.class_rook import Rook, Piece
+from game.class_rook import Rook
+from game.class_board import Board
+from game.class_pawn import Pawn
 
 class TestRook(unittest.TestCase):
-    
-    def setUp(self):
-        # Configuración inicial para las pruebas
-        self.rook = Rook(__color__='white')  # Proporcionar el argumento '__color__'
 
-    def test_rook_inheritance(self):
-        # Verifica que Rook hereda de Piece
-        self.assertIsInstance(self.rook, Piece)
+    def test_str(self):
+        board = Board()
+        rook = Rook("WHITE", board)
+        self.assertEqual(
+            str(rook),
+            "♜",
+        )
 
-    def test_rook_initial_position(self):
-        # Verifica la posición inicial del Rook, si hay un método o atributo para esto
-        # Ejemplo: self.assertEqual(self.rook.__position__, (0, 0))
-        pass
+    def test_move_vertical_desc(self):
+        board = Board()
+        rook = Rook("WHITE", board)
+        possibles = rook.possible_positions_vd(4, 1)
+        self.assertEqual(
+            possibles,
+            [(5, 1), (6, 1), (7, 1)]
+        )
 
-    def test_rook_moves(self):
-        # Verifica los movimientos válidos del Rook
-        # Ejemplo: self.assertTrue(self.rook.is_valid_move((0, 5)))
-        pass
+    def test_move_vertical_asc(self):
+        board = Board()
+        rook = Rook("WHITE", board)
+        possibles = rook.possible_positions_va(4, 1)
+        self.assertEqual(
+            possibles,
+            [(3, 1), (2, 1), (1, 1), (0, 1)]
+        )
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_move_vertical_desc_with_own_piece(self):
+        board = Board()
+        board.set_piece(6, 1, Pawn("WHITE", board))
+        rook = Rook("WHITE", board)
+        board.set_piece(4, 1, rook)
+        possibles = rook.possible_positions_vd(4, 1)
+        self.assertEqual(
+            possibles,
+            [(5, 1)]
+        )
+
+    def test_move_vertical_desc_with_not_own_piece(self):
+        board = Board()
+        board.set_piece(6, 1, Pawn("BLACK", board))
+        rook = Rook("WHITE", board)
+        board.set_piece(4, 1, rook)
+        possibles = rook.possible_positions_vd(4, 1)
+        self.assertEqual(
+            possibles,
+            [(5, 1), (6, 1)]
+        )
+
+    def test_move_diagonal_desc(self):
+        board = Board()
+        rook = board.get_piece(col=0, row=0)
+        is_possible = rook.valid_positions(
+            from_row=0,
+            from_col=0,
+            to_row=1,
+            to_col=1,
+        )
+
+        self.assertFalse(is_possible)
