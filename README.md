@@ -1,6 +1,8 @@
-# Ajedrez en Python ♔♕♖♗♘♙ // Chess on Python ♚♛♜♝♞♟
+# Chess on Python ♔♕♖♗♘♙
 
-# Author: Lucas Alejandro Boschin - Argentina, Mendoza
+# Author:
+Lucas Alejandro Boschin
+Argentina, Mendoza
 
 # CircleCI
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-LucasBoschinUM/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-LucasBoschinUM/tree/main)
@@ -16,9 +18,10 @@ This is a project developed for the subject ‘Computing 1’ which consists of 
 
 # 📋 Requirements
 - Python 3.x...
-- 📚 Librería / Library:
-                         coverage==7.6.1 (included on requirements.txt)
-                         ipdb==0.13.13 (included on requirements.txt)
+- 📚Library:
+
+coverage==7.6.1 (included on requirements.txt)
+ipdb==0.13.13 (included on requirements.txt)
 
 # 🎮 Game
 - Board: An 8x8 cell board with the standard initial configuration of pieces.
@@ -33,10 +36,13 @@ This is a project developed for the subject ‘Computing 1’ which consists of 
 
 # 👨🏼‍💻 Execution
 1- Clone repository:
+
 git clone git@github.com:um-computacion-tm/ajedrez-2024-LucasBoschinUM.git / https://github.com/um-computacion-tm/ajedrez-2024-LucasBoschinUM.git
 
 2- Install dependencies:
+
 pip install -r requirements.txt
 
 3- Play on console:
+
 python3 game/cli.py
