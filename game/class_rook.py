@@ -1,5 +1,6 @@
 from game.class_pieces import Piece
 
+
 class Rook(Piece):
     white_str = "♜"
     black_str = "♖"
