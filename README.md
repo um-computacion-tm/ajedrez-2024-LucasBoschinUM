@@ -1,8 +1,7 @@
 # Chess on Python ♔♕♖♗♘♙
 
-# Author:
-Lucas Alejandro Boschin
-Argentina, Mendoza
+# By: Lucas Alejandro Boschin
+- 📍 Argentina, Mendoza
 
 # CircleCI
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-LucasBoschinUM/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-LucasBoschinUM/tree/main)
@@ -21,6 +20,7 @@ This is a project developed for the subject ‘Computing 1’ which consists of 
 - 📚Library:
 
 coverage==7.6.1 (included on requirements.txt)
+
 ipdb==0.13.13 (included on requirements.txt)
 
 # 🎮 Game
