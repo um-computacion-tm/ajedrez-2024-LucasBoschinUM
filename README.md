@@ -1,5 +1,6 @@
 # ♔♕♖Chess♗♘♙
-Lucas Alejandro Boschin
+By: Lucas Alejandro Boschin
+
 📍 Argentina, Mendoza
 
 # CircleCI
