@@ -1,11 +1,10 @@
 from game.class_rook import Rook
 from game.exceptions import OutOfBoard
 
-
 class Board:
     def __init__(self, for_test = False):
         self.__positions__ = []
-        for _ in range(8):
+        for _ in range(8): #Forma del tablero (8 filas, 8 columnas) ; índices de 1-8 & de A-H
             col = []
             for _ in range(8):
                 col.append(None)
@@ -37,7 +36,7 @@ class Board:
     def set_piece(self, row, col, piece):
         self.__positions__[row][col] = piece
 
-    def move(self, from_row, from_col, to_row, to_col):
+    def move(self, from_row, from_col, to_row, to_col): #Método para mover y comer piezas
         origin = self.get_piece(from_row, from_col)
         self.set_piece(to_row, to_col, origin)
         self.set_piece(from_row, from_col, None)
