@@ -1,5 +1,5 @@
 from game.class_board import Board
-from game.exceptions import InvalidMove, InvalidTurn, EmptyPosition
+from game.exceptions import InvalidMove, InvalidTurn, EmptyPosition, OutOfBoard
 
 class Chess:
     def __init__(self):
@@ -17,6 +17,9 @@ class Chess:
         to_col,
     ):
         # validate coords
+        if not (0 <= from_row < 8 and 0 <= from_col < 8 and 0 <= to_row < 8 and 0 <= to_col < 8):
+            raise OutOfBoard()
+        
         piece = self.__board__.get_piece(from_row, from_col)
         if not piece:
             raise EmptyPosition()
