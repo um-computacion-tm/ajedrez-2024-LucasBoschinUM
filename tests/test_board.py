@@ -60,3 +60,6 @@ class TestBoard(unittest.TestCase):
             exc.exception.message,
             "La posicion indicada se encuentra fuera del tablero"
         )
+
+if __name__ == '__main__':
+    unittest.main()
