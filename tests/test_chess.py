@@ -19,8 +19,8 @@ class TestChess(unittest.TestCase):
         self.assertEqual(self.chess.turn, "WHITE")
 
     def test_move_changes_turn(self):
-        self.chess._Chess__board__.set_piece(7, 0, Rook("WHITE", self.chess._Chess__board__))  # Set a white rook at (7, 0)
-        self.chess.move(7, 0, 6, 0)  # Move the white rook from (7, 0) to (6, 0)
+        self.chess._Chess__board__.set_piece(7, 0, Rook("WHITE", self.chess._Chess__board__))
+        self.chess.move(7, 0, 6, 0)
         self.assertEqual(self.chess.turn, "BLACK")
 
     def test_invalid_move_out_of_board(self):
@@ -32,14 +32,17 @@ class TestChess(unittest.TestCase):
             self.chess.move(4, 4, 5, 5)
 
     def test_invalid_move_opponent_piece(self):
-        self.chess._Chess__board__.set_piece(0, 0, Rook("BLACK", self.chess._Chess__board__))  # Set a black rook at (0, 0)
+        self.chess._Chess__board__.set_piece(0, 0, Rook("BLACK", self.chess._Chess__board__))
         with self.assertRaises(InvalidTurn):
             self.chess.move(0, 0, 1, 0)
 
     def test_invalid_move(self):
-        self.chess._Chess__board__.set_piece(7, 0, Rook("WHITE", self.chess._Chess__board__))  # Set a white rook at (7, 0)
+        self.chess._Chess__board__.set_piece(7, 0, Rook("WHITE", self.chess._Chess__board__))
         with self.assertRaises(InvalidMove):
-            self.chess.move(7, 0, 7, 7)  # Invalid move for a rook
+            self.chess.move(7, 0, 7, 7)
+
+    def test_is_playing(self):
+        self.assertTrue(self.chess.is_playing())
 
 if __name__ == '__main__':
     unittest.main()
