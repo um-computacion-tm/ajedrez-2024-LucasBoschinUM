@@ -1,6 +1,5 @@
 from game.class_pieces import Piece
 
-
 class Rook(Piece):
     white_str = "♜"
     black_str = "♖"
@@ -35,4 +34,3 @@ class Rook(Piece):
         for next_row in range(row - 1, -1, -1):
             possibles.append((next_row, col))
         return possibles
-

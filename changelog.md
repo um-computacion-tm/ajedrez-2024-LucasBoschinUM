@@ -5,6 +5,52 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [4.1.0] - 25-09-24
+...
+
+## [4.1.0] - 24-09-24
+#--------------Tercer Sprint----------------
+...
+
+## [4.1.0] - 23-09-24
+...
+
+## [4.1.0] - 22-09-24
+...
+
+## [4.1.0] - 21-09-24
+...
+
+## [4.1.0] - 20-09-24
+...
+
+## [4.1.0] - 19-09-24
+...
+
+## [4.1.0] - 18-09-24
+...
+
+## [4.1.0] - 17-09-24
+...
+
+## [4.1.0] - 16-09-24
+...
+
+## [4.1.0] - 15-09-24
+...
+
+## [4.1.0] - 14-09-24
+...
+
+## [4.1.0] - 13-09-24
+...
+
+## [4.1.0] - 12-09-24
+...
+
+## [4.1.0] - 11-09-24
+...
+
 ## [4.1.0] - 10-09-24
 #--------------Segundo Sprint----------------
 - The following changes were made on game/class_rook.py: Removed an unusable line of code

@@ -64,3 +64,6 @@ class TestRook(unittest.TestCase):
         )
 
         self.assertFalse(is_possible)
+        
+if __name__ == '__main__':
+    unittest.main()      
