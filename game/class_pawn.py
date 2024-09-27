@@ -23,31 +23,17 @@ class Pawn(Piece):
         return []
 
     def get_possible_positions_move(self, from_row, from_col):
+        possible_positions = []
+
         if self.__color__ == "BLACK":
             if self.__board__.get_piece(from_row + 1, from_col) is None:
-                if (
-                    from_row == 1 and
-                    self.__board__.get_piece(from_row + 2, from_col) is None
-                ):
-                    return [
-                        (from_row + 1, from_col),
-                        (from_row + 2, from_col)
-                    ]
-                else:
-                    return [
-                        (from_row + 1, from_col),
-                    ]
+                possible_positions.append((from_row + 1, from_col))
+                if from_row == 1 and self.__board__.get_piece(from_row + 2, from_col) is None:
+                    possible_positions.append((from_row + 2, from_col))
         else:
             if from_row == 6:
-                return [
-                    (from_row - 1, from_col),
-                    (from_row - 2, from_col)
-                ]
-            else:
-                if self.__board__.get_piece(from_row - 1, from_col) is None:
-                    return [
-                        (from_row - 1, from_col),
-                    ]
-                else:
-                    return []
-        return []
+                possible_positions.extend([(from_row - 1, from_col), (from_row - 2, from_col)])
+            elif self.__board__.get_piece(from_row - 1, from_col) is None:
+                possible_positions.append((from_row - 1, from_col))
+
+        return possible_positions
