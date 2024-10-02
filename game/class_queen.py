@@ -36,3 +36,27 @@ class Queen(Piece):
                 break
             possibles.append((from_row + i, from_col - i))
         return possibles
+
+    def possible_orthogonal_positions(self, from_row, from_col):
+        possibles = []
+        # Movimiento hacia arriba
+        for i in range(1, 8):
+            if from_row - i < 0:
+                break
+            possibles.append((from_row - i, from_col))
+        # Movimiento hacia abajo
+        for i in range(1, 8):
+            if from_row + i > 7:
+                break
+            possibles.append((from_row + i, from_col))
+        # Movimiento hacia la derecha
+        for i in range(1, 8):
+            if from_col + i > 7:
+                break
+            possibles.append((from_row, from_col + i))
+        # Movimiento hacia la izquierda
+        for i in range(1, 8):
+            if from_col - i < 0:
+                break
+            possibles.append((from_row, from_col - i))
+        return possibles
