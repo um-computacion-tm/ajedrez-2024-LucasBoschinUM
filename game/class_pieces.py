@@ -23,33 +23,35 @@ class Piece:
         return (to_row, to_col) in possible_positions
 
     def possible_diagonal_positions(self, from_row, from_col):
-        return ()
+        return []
 
     def possible_orthogonal_positions(self, from_row, from_col):
-        return (
-            self.possible_positions_vd(from_row, from_col) +
-            self.possible_positions_va(from_row, from_col)
-        )
-
-    def possible_positions_vd(self, row, col):
         possibles = []
-        for next_row in range(row + 1, 8):
-            # que la celda que sigue no este ocupada..
-            other_piece = self.__board__.get_piece(next_row, col)
-            if other_piece is not None:
-                if other_piece.get_color() != self.get_color():
-                    possibles.append((next_row, col))
-                break
-            possibles.append((next_row, col))
+        possibles.extend(self.possible_positions_vd(from_row, from_col))
+        possibles.extend(self.possible_positions_va(from_row, from_col))
         return possibles
 
-    def possible_positions_va(self, row, col):
+    def possible_positions(self, row, col, row_increment, limit_condition):
         possibles = []
-        for next_row in range(row - 1, -1, -1):
+        next_row = row + row_increment
+        while limit_condition(next_row):
             other_piece = self.__board__.get_piece(next_row, col)
             if other_piece is not None:
                 if other_piece.get_color() != self.get_color():
                     possibles.append((next_row, col))
                 break
             possibles.append((next_row, col))
+            next_row += row_increment
+        return possibles
+
+    def possible_positions_vd(self, row, col):
+        return self.possible_positions(row, col, 1, lambda r: r < 8)
+
+    def possible_positions_va(self, row, col):
+        return self.possible_positions(row, col, -1, lambda r: r >= 0)
+
+    def get_possible_positions(self, from_row, from_col):
+        possibles = []
+        possibles.extend(self.possible_diagonal_positions(from_row, from_col))
+        possibles.extend(self.possible_orthogonal_positions(from_row, from_col))
         return possibles
