@@ -14,8 +14,9 @@ class TestRook(unittest.TestCase):
         )
 
     def test_move_vertical_desc(self):
-        board = Board()
+        board = Board(for_test=True)  # Crear un tablero vacío para pruebas
         rook = Rook("WHITE", board)
+        board.set_piece(4, 1, rook)  # Colocar la torre en la posición inicial
         possibles = rook.possible_positions_vd(4, 1)
         self.assertEqual(
             possibles,

@@ -5,53 +5,152 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [4.1.0] - 25-09-24
+## [15.2.0] - 25-10-24
 ...
 
-## [4.1.0] - 24-09-24
+## [15.2.0] - 24-10-24
+...
+
+## [15.2.0] - 23-10-24
+...
+
+## [15.2.0] - 22-10-24
+#--------------Quinto Sprint----------------
+...
+
+## [15.2.0] - 21-10-24
+...
+
+## [15.2.0] - 20-10-24
+...
+
+## [15.2.0] - 19-10-24
+...
+
+## [15.2.0] - 18-10-24
+...
+
+## [15.2.0] - 17-10-24
+...
+
+## [15.2.0] - 16-10-24
+...
+
+## [15.2.0] - 15-10-24
+...
+
+## [15.2.0] - 14-10-24
+...
+
+## [15.2.0] - 13-10-24
+...
+
+## [15.2.0] - 12-10-24
+...
+
+## [15.2.0] - 11-10-24
+...
+
+## [15.2.0] - 10-10-24
+...
+
+## [15.2.0] - 09-10-24
+...
+
+## [15.2.0] - 08-10-24
+#--------------Cuarto Sprint----------------
+- The following changes were made on game/class_knight.py: Changed the condition of valid moves ; Added new methods ; Added board boundary checking ; Added target piece checking ; Added board interaction
+
+## [15.2.0] - 07-10-24
+- The following changes were made on game/class_bishop.py: Functions were defined ; Some lists were modified ; Directions and movement conditions were added ; Interactions with the board were added ; Conditions for capturing pieces were added
+
+## [15.2.0] - 06-10-24
+- The following changes were made on game/class_bishop.py: (all added as a comment) Changed function calls; Implemented logic and calculation of positions
+
+## [15.2.0] - 05-10-24
+- The following changes were made on tests/test_pieces.py: New tests added ; Old tests removed
+
+## [15.2.0] - 04-10-24
+- The following changes were made on game/class_pieces.py: Returns changed ; Methods changed ; New functions added ; New methods added
+
+## [15.1.0] - 03-10-24
+- The following changes were made on tests/test_queen.py: Imports changed ; MockBoard class changed to Board(for_test=True) ; SetUp method changed ; Added specifications to possible position tests ; Added additional tests
+
+## [15.0.0] - 02-10-24
+- The following changes were made on game/class_queen.py: New methods added and implemented ; Break conditions added ; Possible positions added
+
+## [14.1.1] - 01-10-24
+- The following changes were made on tests/test_rook.py: Changed board initialization ; Added piece placement on the board
+
+## [14.0.0] - 30-09-24
+- The following changes were made on tests/test_board.py: The content of the string was changed ; The numbers of rows and columns were changed ; The representations of pieces were added ; The distributions of pieces were added ; The display of the board was changed
+
+## [13.1.0] - 29-09-24
+- The following changes were made on game/class_board.py: New imports added ; Additional assignments added
+
+## [13.0.0] - 28-09-24
+- Added tests/test_king.py
+- The following changes were made on game/class_king.py: New features added
+
+## [12.1.0] - 27-09-24
+- The following changes were made on game/class_pawn.py: Added initializations ; Modified conditionals ; Modified returns
+
+## [12.0.0] - 24-09-24
 #--------------Tercer Sprint----------------
-...
+- Added game/class_king.py
 
-## [4.1.0] - 23-09-24
-...
+## [11.1.0] - 23-09-24
+- The following changes were made on tests/test_chess.py: New unittests added
 
-## [4.1.0] - 22-09-24
-...
+## [11.0.0] - 22-09-24
+- Added tests/test_exceptions.py
 
-## [4.1.0] - 21-09-24
-...
+## [10.0.0] - 21-09-24
+- Added tests/test_queen.py
+- Added game/class_queen.py
 
-## [4.1.0] - 20-09-24
-...
+## [9.0.0] - 20-09-24
+- Added tests/test_knight.py
+- Added game/class_knight.py
 
-## [4.1.0] - 19-09-24
-...
+## [8.0.0] - 19-09-24
+- Added tests/test_bishop.py
+- Added game/class_bishop.py
 
-## [4.1.0] - 18-09-24
-...
+## [7.7.0] - 18-09-24
+- The following changes were made on tests/test_pieces.py: A method was modified ; New test methods were added ; New Board instances were created
+- The following changes were made on game/class_pieces.py: New additional methods added ; Motion logic added ; New attributes added
 
-## [4.1.0] - 17-09-24
-...
+## [7.6.1] - 17-09-24
+The following changes were made on tests/test_rook.py: Added a block that is used to execute the test suite when the file is executed directly as a script
+The following changes were made on game/class_rook.py: Unnecessary space removed
+The following changes were made on tests/test_board.py: Added a block that is used to execute the test suite when the file is executed directly as a script
+The following changes were made on game/class_board.py: Added comments
 
-## [4.1.0] - 16-09-24
-...
+## [7.6.0] - 16-09-24
+- The following changes were made on tests/test_chess.py: Added new imports ; Added new test methods ; Removed the use of a Mock
+- The following changes were made on game/class_chess.py: New imports added ; New validations added
 
-## [4.1.0] - 15-09-24
-...
+## [7.5.1] - 15-09-24
+- The following changes were made on tests/test_rook.py: Added a block that is used to execute the test suite when the file is executed directly as a script
+- The following changes were made on tests/test_cli.py: Imports have been changed ; New methods have been added
+- The following changes were made on game/cli.py: Added new exceptions
 
-## [4.1.0] - 14-09-24
-...
+## [7.4.0] - 14-09-24
+- The following changes were made on tests/test_pawn.py: Added imports ; Added new test methods ; Added new Board instances ; Added motion tests
+- The following changes were made on game/class_pawn.py: Added new methods
 
-## [4.1.0] - 13-09-24
-...
+## [7.3.1] - 13-09-24
+- The following changes were made on tests/test_pawn.py: Added additional arguments ; Added comments
+- The following changes were made on tests/test_chess.py: Added imports ; Changed and added test methods
 
-## [4.1.0] - 12-09-24
-...
+## [7.2.0] - 12-09-24
+- Added tests/test_pawn.py
 
-## [4.1.0] - 11-09-24
-...
+## [7.1.1] - 11-09-24
+- The following changes were made on game/class_chess.py: Added more exception imports ; Added new validations ; Fixed movement validation logic ; Added call to the move method
 
-## [4.1.0] - 10-09-24
+## [7.0.0] - 10-09-24
 #--------------Segundo Sprint----------------
 - The following changes were made on game/class_rook.py: Removed an unusable line of code
 - README.md was improved to be more aesthetically pleasing
