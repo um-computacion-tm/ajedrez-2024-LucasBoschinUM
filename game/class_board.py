@@ -67,3 +67,6 @@ class Board:
         origin = self.get_piece(from_row, from_col)
         self.set_piece(to_row, to_col, origin)
         self.set_piece(from_row, from_col, None)
+
+    def place_piece(self, piece, row, col):
+        self.__positions__[row][col] = piece
