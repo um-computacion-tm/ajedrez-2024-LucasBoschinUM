@@ -29,3 +29,6 @@ class Bishop(Piece):
                 next_col += col_inc
         
         return possibles
+    
+    def is_move_valid(self, from_row, from_col, to_row, to_col):
+        return (to_row, to_col) in self.get_possible_positions(from_row, from_col)
