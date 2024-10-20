@@ -1,8 +1,8 @@
 from game.class_pieces import Piece
 
 class Pawn(Piece):
-    white_str = "♜"
-    black_str = "♖"
+    white_str = "♟"
+    black_str = "♙"
 
     def get_possible_positions(self, from_row, from_col):
         possibles = self.get_possible_positions_move(
