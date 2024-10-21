@@ -11,8 +11,8 @@ class TestBishop(unittest.TestCase):
         self.board.place_piece(self.bishop_black, 2, 2)
 
     def test_initialization(self):
-        self.assertEqual(str(self.bishop_white), "♗")
-        self.assertEqual(str(self.bishop_black), "♝")
+        self.assertEqual(str(self.bishop_white), "♝")
+        self.assertEqual(str(self.bishop_black), "♗")
 
     def test_get_possible_positions(self):
         from_row, from_col = 4, 4
