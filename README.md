@@ -46,3 +46,10 @@ pip install -r requirements.txt
 3- Play on console:
 
 python3 game/cli.py
+
+# 🐋 Dockerfile
+Commands:
+
+1- docker buildx build -t ajedrez-2024-LucasBoschinUM .
+
+2- docker run -i ajedrez-2024-LucasBoschinUM
