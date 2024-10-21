@@ -14,19 +14,22 @@ class Rook(Piece):
     def __str__(self):
         return "♜" if self.color == "WHITE" else "♖"
 
-    def is_vertical_path_clear(self, from_row, from_col, to_row):
-        step = 1 if to_row > from_row else -1
-        for row in range(from_row + step, to_row, step):
-            if self.board.get_piece(row, from_col) is not None:
-                return False
+    def is_path_clear(self, start, end, fixed, is_vertical):
+        step = 1 if end > start else -1
+        for pos in range(start + step, end, step):
+            if is_vertical:
+                if self.board.get_piece(pos, fixed) is not None:
+                    return False
+            else:
+                if self.board.get_piece(fixed, pos) is not None:
+                    return False
         return True
 
+    def is_vertical_path_clear(self, from_row, from_col, to_row):
+        return self.is_path_clear(from_row, to_row, from_col, True)
+
     def is_horizontal_path_clear(self, from_row, from_col, to_col):
-        step = 1 if to_col > from_col else -1
-        for col in range(from_col + step, to_col, step):
-            if self.board.get_piece(from_row, col) is not None:
-                return False
-        return True
+        return self.is_path_clear(from_col, to_col, from_row, False)
 
     def valid_positions(self, from_row, from_col, to_row, to_col):
         is_valid = False

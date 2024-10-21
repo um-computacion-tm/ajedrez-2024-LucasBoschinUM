@@ -68,18 +68,26 @@ class Queen(Piece):
         destination_piece = self.__board__.get_piece(to_row, to_col)
         return destination_piece and destination_piece.get_color() == self.get_color()
 
+    def is_row_clear(self, from_row, from_col, to_col):
+        step = 1 if to_col > from_col else -1
+        for col in range(from_col + step, to_col, step):
+            if self.__board__.get_piece(from_row, col):
+                return False
+        return True
+
+    def is_col_clear(self, from_row, to_row, from_col):
+        step = 1 if to_row > from_row else -1
+        for row in range(from_row + step, to_row, step):
+            if self.__board__.get_piece(row, from_col):
+                return False
+        return True
+
     def is_path_clear_orthogonal(self, from_row, from_col, to_row, to_col):
         if from_row == to_row:
-            step = 1 if to_col > from_col else -1
-            for col in range(from_col + step, to_col, step):
-                if self.__board__.get_piece(from_row, col):
-                    return False
+            return self.is_row_clear(from_row, from_col, to_col)
         elif from_col == to_col:
-            step = 1 if to_row > from_row else -1
-            for row in range(from_row + step, to_row, step):
-                if self.__board__.get_piece(row, from_col):
-                    return False
-        return True
+            return self.is_col_clear(from_row, to_row, from_col)
+        return False
 
     def is_path_clear_diagonal(self, from_row, from_col, to_row, to_col):
         path_clear = True
