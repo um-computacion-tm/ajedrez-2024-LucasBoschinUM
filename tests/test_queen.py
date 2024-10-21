@@ -113,5 +113,10 @@ class TestQueen(unittest.TestCase):
         ]
         self.assertEqual(self.queen.get_valid_moves(4, 4), expected_moves)
 
+    def test_invalid_move(self):
+        self.board.place_piece(self.queen, 4, 4)
+        # Movimiento inválido (no ortogonal ni diagonal)
+        self.assertFalse(self.queen.is_valid_move(4, 4, 5, 6))
+
 if __name__ == '__main__':
     unittest.main()
