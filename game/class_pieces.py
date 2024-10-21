@@ -50,8 +50,11 @@ class Piece:
     def possible_positions_va(self, row, col):
         return self.possible_positions(row, col, -1, lambda r: r >= 0)
 
-    def get_possible_positions(self, from_row, from_col):
+    def get_combined_positions(self, from_row, from_col):
         possibles = []
         possibles.extend(self.possible_diagonal_positions(from_row, from_col))
         possibles.extend(self.possible_orthogonal_positions(from_row, from_col))
         return possibles
+
+    def get_possible_positions(self, from_row, from_col):
+        return self.get_combined_positions(from_row, from_col)
