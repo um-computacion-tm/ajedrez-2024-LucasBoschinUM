@@ -19,5 +19,25 @@ class TestKnight(unittest.TestCase):
         ]
         self.assertCountEqual(positions, expected_positions)
 
+    def test_is_valid_move_within_bounds(self):
+        self.assertTrue(self.knight.is_valid_move(4, 4))
+        self.assertTrue(self.knight.is_valid_move(0, 0))
+        self.assertTrue(self.knight.is_valid_move(7, 7))
+
+    def test_is_valid_move_out_of_bounds(self):
+        self.assertFalse(self.knight.is_valid_move(-1, 0))
+        self.assertFalse(self.knight.is_valid_move(0, -1))
+        self.assertFalse(self.knight.is_valid_move(8, 0))
+        self.assertFalse(self.knight.is_valid_move(0, 8))
+
+    def test_is_valid_move_occupied_by_same_color(self):
+        self.board.place_piece(self.knight, 4, 4)
+        self.assertFalse(self.knight.is_valid_move(4, 4))
+
+    def test_is_valid_move_occupied_by_opponent(self):
+        opponent_knight = Knight(color='BLACK', board=self.board)
+        self.board.place_piece(opponent_knight, 4, 4)
+        self.assertTrue(self.knight.is_valid_move(4, 4))
+
 if __name__ == '__main__':
     unittest.main()

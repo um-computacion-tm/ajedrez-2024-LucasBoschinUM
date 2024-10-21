@@ -7,7 +7,7 @@ from game.exceptions import InvalidMove, InvalidTurn, EmptyPosition, OutOfBoard
 class TestChess(unittest.TestCase):
     def setUp(self):
         self.chess = Chess()
-        self.chess._Chess__board__ = Board()  # Inicializar el tablero correctamente
+        self.chess._Chess__board__ = Board(for_test=True)  # Inicializar el tablero correctamente
 
     def test_initial_turn(self):
         self.assertEqual(self.chess.turn, "WHITE")
@@ -43,6 +43,38 @@ class TestChess(unittest.TestCase):
 
     def test_is_playing(self):
         self.assertTrue(self.chess.is_playing())
+
+    def test_end_game_white_wins(self):
+        self.chess._Chess__board__.remove_piece(0, 0)  # Remover todas las piezas negras
+        self.chess._Chess__board__.remove_piece(0, 7)
+        self.chess._Chess__board__.remove_piece(0, 1)
+        self.chess._Chess__board__.remove_piece(0, 6)
+        self.chess._Chess__board__.remove_piece(0, 2)
+        self.chess._Chess__board__.remove_piece(0, 5)
+        self.chess._Chess__board__.remove_piece(0, 3)
+        self.chess._Chess__board__.remove_piece(0, 4)
+        for col in range(8):
+            self.chess._Chess__board__.remove_piece(1, col)
+        self.chess.end_game()
+        self.assertFalse(self.chess.is_playing())
+
+    def test_end_game_black_wins(self):
+        self.chess._Chess__board__.remove_piece(7, 0)  # Remover todas las piezas blancas
+        self.chess._Chess__board__.remove_piece(7, 7)
+        self.chess._Chess__board__.remove_piece(7, 1)
+        self.chess._Chess__board__.remove_piece(7, 6)
+        self.chess._Chess__board__.remove_piece(7, 2)
+        self.chess._Chess__board__.remove_piece(7, 5)
+        self.chess._Chess__board__.remove_piece(7, 3)
+        self.chess._Chess__board__.remove_piece(7, 4)
+        for col in range(8):
+            self.chess._Chess__board__.remove_piece(6, col)
+        self.chess.end_game()
+        self.assertFalse(self.chess.is_playing())
+
+    def test_end_by_agreement(self):
+        self.chess.end_by_agreement()
+        self.assertFalse(self.chess.is_playing())
 
 if __name__ == '__main__':
     unittest.main()

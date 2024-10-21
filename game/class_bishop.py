@@ -1,8 +1,8 @@
 from game.class_pieces import Piece
 
 class Bishop(Piece):
-    white_str = "♗"
-    black_str = "♝"
+    white_str = "♝"
+    black_str = "♗"
 
     def get_possible_positions(self, from_row, from_col):
         return self.possible_diagonal_positions(
@@ -29,3 +29,6 @@ class Bishop(Piece):
                 next_col += col_inc
         
         return possibles
+    
+    def is_move_valid(self, from_row, from_col, to_row, to_col):
+        return (to_row, to_col) in self.get_possible_positions(from_row, from_col)

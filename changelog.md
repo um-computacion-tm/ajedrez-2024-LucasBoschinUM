@@ -5,69 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [15.2.0] - 25-10-24
-...
+## [20.0.0] - 21-10-24
+- The following changes were made on tests/test_cli.py: Added import of new exceptions ; Modified test methods ; Added new test methods
+- The following changes were made on game/cli.py: Added an options menu
+- The following changes were made on tests/test_chess.py: Test methods have been modified ; New test methods have been added
+- The following changes were made on game/class_chess.py: New attributes added ; Methods modified ; New methods added
 
-## [15.2.0] - 24-10-24
-...
+## [19.0.0] - 20-10-24
+- The following changes were made on tests/test_board.py: Modified the board to add coordinates; Added new test methods
+- The following changes were made on game/class_board.py: New methods were added ; Methods were modified and corrected
+- Added Dockerfile commands on README.md
+- The following changes were made on tests/test_bishop.py: The bishop's symbols were exchanged
+- The following changes were made on game/class_bishop.py: The bishop's symbols were exchanged
+- The following changes were made on tests/test_rook.py: Modified test methods ; Added new test methods
 
-## [15.2.0] - 23-10-24
-...
+## [18.0.0] - 19-10-24
+- The following changes were made on game/class_rook.py: Added a __init__ constructor ; Modified methods ; Added new methods
+- The following changes were made on game/class_pawn.py: Fixed the Pawn symbol
 
-## [15.2.0] - 22-10-24
-#--------------Quinto Sprint----------------
-...
+## [17.8.0] - 18-10-24
+- The following changes were made on tests/test_pawn.py: Unnecessary spaces were removed ; Piece positions were changed ; New test methods were added
 
-## [15.2.0] - 21-10-24
-...
+## [17.7.0] - 17-10-24
+- The following changes were made on game/class_pawn.py: Methods were modified
 
-## [15.2.0] - 20-10-24
-...
+## [17.6.0] - 16-10-24
+- The following changes were made on tests/test_bishop.py: Modified setUp ; Added new test methods
 
-## [15.2.0] - 19-10-24
-...
+## [17.5.0] - 15-10-24
+- The following changes were made on game/class_bishop.py: New methods added
 
-## [15.2.0] - 18-10-24
-...
+## [17.4.1] - 12-10-24
+- The following changes were made on game/class_board.py: New methods added
 
-## [15.2.0] - 17-10-24
-...
+## [17.3.0] - 11-10-24
+- The following changes were made on tests/test_queen.py: Modified setUp ; Added new test methods
 
-## [15.2.0] - 16-10-24
-...
+## [17.2.0] - 10-10-24
+- The following changes were made on game/class_queen.py: New methods added
 
-## [15.2.0] - 15-10-24
-...
+## [17.1.0] - 09-10-24
+- The following changes were made on tests/test_knight.py: New test methods added
 
-## [15.2.0] - 14-10-24
-...
-
-## [15.2.0] - 13-10-24
-...
-
-## [15.2.0] - 12-10-24
-...
-
-## [15.2.0] - 11-10-24
-...
-
-## [15.2.0] - 10-10-24
-...
-
-## [15.2.0] - 09-10-24
-...
-
-## [15.2.0] - 08-10-24
+## [17.0.0] - 08-10-24
 #--------------Cuarto Sprint----------------
 - The following changes were made on game/class_knight.py: Changed the condition of valid moves ; Added new methods ; Added board boundary checking ; Added target piece checking ; Added board interaction
 
-## [15.2.0] - 07-10-24
+## [16.0.0] - 07-10-24
 - The following changes were made on game/class_bishop.py: Functions were defined ; Some lists were modified ; Directions and movement conditions were added ; Interactions with the board were added ; Conditions for capturing pieces were added
 
-## [15.2.0] - 06-10-24
+## [15.4.0] - 06-10-24
 - The following changes were made on game/class_bishop.py: (all added as a comment) Changed function calls; Implemented logic and calculation of positions
 
-## [15.2.0] - 05-10-24
+## [15.3.0] - 05-10-24
 - The following changes were made on tests/test_pieces.py: New tests added ; Old tests removed
 
 ## [15.2.0] - 04-10-24
