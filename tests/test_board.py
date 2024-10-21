@@ -9,14 +9,15 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(
             str(board),
             (
-                "♖♘♝♕♔♝♘♖\n"
-                "♖♖♖♖♖♖♖♖\n"
-                "        \n"
-                "        \n"
-                "        \n"
-                "        \n"
-                "♜♜♜♜♜♜♜♜\n"
-                "♜♞♗♛♚♗♞♜\n"
+                "  0 1 2 3 4 5 6 7\n"
+                "0 ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖ \n"
+                "1 ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙ \n"
+                "2                 \n"
+                "3                 \n"
+                "4                 \n"
+                "5                 \n"
+                "6 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟ \n"
+                "7 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜ \n"
             )
         )
 
@@ -39,14 +40,15 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(
             str(board),
             (
-                " ♖      \n"
-                "        \n"
-                "        \n"
-                "        \n"
-                "        \n"
-                "        \n"
-                "        \n"
-                "        \n"
+                "  0 1 2 3 4 5 6 7\n"
+                "0   ♖             \n"
+                "1                 \n"
+                "2                 \n"
+                "3                 \n"
+                "4                 \n"
+                "5                 \n"
+                "6                 \n"
+                "7                 \n"
             )
         )
 
@@ -60,6 +62,26 @@ class TestBoard(unittest.TestCase):
             exc.exception.message,
             "La posicion indicada se encuentra fuera del tablero"
         )
+
+    def test_place_piece(self):
+        board = Board(for_test=True)
+        rook = Rook(color='WHITE', board=board)
+        board.place_piece(rook, 0, 0)
+        self.assertIs(board.get_piece(0, 0), rook)
+
+    def test_remove_piece(self):
+        board = Board(for_test=True)
+        rook = Rook(color='WHITE', board=board)
+        board.place_piece(rook, 0, 0)
+        board.remove_piece(0, 0)
+        self.assertIsNone(board.get_piece(0, 0))
+
+    def test_has_no_pieces(self):
+        board = Board(for_test=True)
+        self.assertTrue(board.has_no_pieces('WHITE'))
+        rook = Rook(color='WHITE', board=board)
+        board.place_piece(rook, 0, 0)
+        self.assertFalse(board.has_no_pieces('WHITE'))
 
 if __name__ == '__main__':
     unittest.main()
