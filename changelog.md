@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
 ## [20.0.0] - 21-10-24
+- The following changes were made on game/class_pawn.py: Fixing issues to get an A in Maintainability
+- The following changes were made on game/class_pieces.py: Fixing issues to get an A in Maintainability
+- The following changes were made on game/class_queen.py: Fixing issues to get an A in Maintainability
+- The following changes were made on game/class_rook.py: Fixing issues to get an A in Maintainability
+- The following changes were made on tests/test_rook.py: Fixing issues to get an A in Maintainability
+- The following changes were made on tests/test_queen.py: Fixing issues to get an A in Maintainability
 - The following changes were made on tests/test_cli.py: Added import of new exceptions ; Modified test methods ; Added new test methods
 - The following changes were made on game/cli.py: Added an options menu
 - The following changes were made on tests/test_chess.py: Test methods have been modified ; New test methods have been added
