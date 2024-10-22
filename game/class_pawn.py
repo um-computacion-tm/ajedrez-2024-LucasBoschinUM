@@ -25,13 +25,16 @@ class Pawn(Piece):
         possible_positions.extend(self.get_capture_positions(from_row, from_col, offsets['row_offset'], offsets['col_offset2'], opponent_color))
         return possible_positions
 
+    def get_capture_positions_with_offsets(self, from_row, from_col, offsets, opponent_color):
+        return self.get_capture_positions_for_color(from_row, from_col, offsets, opponent_color)
+
     def get_black_capture_positions(self, from_row, from_col):
         offsets = {'row_offset': 1, 'col_offset1': -1, 'col_offset2': 1}
-        return self.get_capture_positions_for_color(from_row, from_col, offsets, "WHITE")
+        return self.get_capture_positions_with_offsets(from_row, from_col, offsets, "WHITE")
 
     def get_white_capture_positions(self, from_row, from_col):
         offsets = {'row_offset': -1, 'col_offset1': -1, 'col_offset2': 1}
-        return self.get_capture_positions_for_color(from_row, from_col, offsets, "BLACK")
+        return self.get_capture_positions_with_offsets(from_row, from_col, offsets, "BLACK")
 
     def get_possible_positions_eat(self, from_row, from_col):
         if self.__color__ == "BLACK":
