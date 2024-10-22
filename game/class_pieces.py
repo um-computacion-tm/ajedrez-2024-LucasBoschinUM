@@ -27,8 +27,10 @@ class Piece:
 
     def possible_orthogonal_positions(self, from_row, from_col):
         possibles = []
-        possibles.extend(self.possible_positions_vd(from_row, from_col))
-        possibles.extend(self.possible_positions_va(from_row, from_col))
+        self.extend_positions(possibles, [
+            lambda: self.possible_positions_vd(from_row, from_col),
+            lambda: self.possible_positions_va(from_row, from_col)
+        ])
         return possibles
 
     def possible_positions(self, row, col, row_increment, limit_condition):
@@ -36,8 +38,8 @@ class Piece:
         next_row = row + row_increment
         while limit_condition(next_row):
             other_piece = self.__board__.get_piece(next_row, col)
-            if other_piece is not None:
-                if other_piece.get_color() != self.get_color():
+            if (other_piece is not None):
+                if (other_piece.get_color() != self.get_color()):
                     possibles.append((next_row, col))
                 break
             possibles.append((next_row, col))
@@ -52,9 +54,15 @@ class Piece:
 
     def get_combined_positions(self, from_row, from_col):
         possibles = []
-        possibles.extend(self.possible_diagonal_positions(from_row, from_col))
-        possibles.extend(self.possible_orthogonal_positions(from_row, from_col))
+        self.extend_positions(possibles, [
+            lambda: self.possible_diagonal_positions(from_row, from_col),
+            lambda: self.possible_orthogonal_positions(from_row, from_col)
+        ])
         return possibles
 
     def get_possible_positions(self, from_row, from_col):
         return self.get_combined_positions(from_row, from_col)
+
+    def extend_positions(self, positions, position_functions):
+        for func in position_functions:
+            positions.extend(func())
